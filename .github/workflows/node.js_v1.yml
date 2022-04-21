@@ -19,16 +19,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: set up SSH
-      run: |
-        mkdir ./.key/
-        echo "$SSH_PRIVATE_KEY" > ./.key/my-key.pem
-        sudo chmod 600 ./.key/my-key.pem
-      shell: bash
-      env:
-        SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-    - name: Install PM2
-      run: npm i pm2
     - run: npm ci
-    - name: Deploy
-      run: pm2 deploy development
+
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.1
+      with:
+        switches: -avzr --delete
+        path: ./*
+        remote_path: /home/ec2-user/test/deploy-dev/source/
+        remote_host: "${{ secrets.AWS_HOST }}"
+        remote_user: ec2-user
+        remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
