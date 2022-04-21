@@ -19,7 +19,7 @@ module.exports = {
       "user" : EC2Config.USER,
       "host" : EC2Config.HOST,
       "ref"  : "origin/main",
-      "repo" : "git@github.com:YoonHae/deploy.git",
+      "repo" : "https://github.com/greenlabs-yho/deploy.git",
       "path" : "/home/ec2-user/test/deploy-dev",
       "post-deploy" : "npm install && pm2 restart ecosystem.config.js --env development --only deploy-dev"
     }
