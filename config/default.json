@@ -1,0 +1,9 @@
+{
+  "AWSConfig": {
+    "EC2Config": {
+      "HOST": "54.180.151.83",
+      "USER": "ec2-user",
+      "PEM-FILE-NAME": "my-key.pem"
+    }
+  }
+}
