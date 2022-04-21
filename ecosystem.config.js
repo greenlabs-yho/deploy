@@ -15,7 +15,7 @@ module.exports = {
   // Deployment Configuration
   deploy : {
     development : {
-      key: "./.key/" + EC2Config.PEM-FILE-NAME,
+      key: "./.key/" + EC2Config.PEM_FILE_NAME,
       "user" : EC2Config.USER,
       "host" : EC2Config.HOST,
       "ref"  : "origin/main",
