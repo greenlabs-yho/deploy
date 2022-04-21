@@ -4,7 +4,7 @@ const { EC2Config } = config.get('AWSConfig')
 module.exports = {
   apps : [{
     name: 'deploy-dev',
-    script: 'api.js',
+    script: 'app.js',
     env_development: {
       NODE_ENV: 'development',
     },
