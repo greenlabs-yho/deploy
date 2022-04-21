@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false }));  // body 에 데이터가 �
 //** GET - basic */
 // req: 요청정보 객체,  res: 응답할때 이용할 객체
 app.get('/', function(req, res) {
-    res.send('this is main. deploy v1.7'); // 기본적인 응답 데이터를 반환할때 사용
+    res.send('this is main. deploy v1.9 실패 테스트'); // 기본적인 응답 데이터를 반환할때 사용
 });
 
 
