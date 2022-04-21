@@ -29,4 +29,4 @@ jobs:
           host: "${{ secrets.AWS_HOST }}"
           username: ec2-user
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
-          script: npm install && pm2 restart ecosystem.config.js --env development --only deploy-dev
+          script: cd /home/ec2-user/test/deploy-dev/source && npm install && pm2 restart ecosystem.config.js --env development --only deploy-dev
