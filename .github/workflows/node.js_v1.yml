@@ -31,4 +31,4 @@ jobs:
       run: npm i pm2
     - run: npm ci
     - name: Deploy
-      run: sudo pm2 deploy development
+      run: pm2 deploy development
