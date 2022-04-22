@@ -9,7 +9,6 @@ on:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -37,4 +36,5 @@ jobs:
         fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        MATRIX_CONTEXT: ${{ toJson(matrix) }} # required
       if: always() # Pick up events even if the job fails or is canceled.
