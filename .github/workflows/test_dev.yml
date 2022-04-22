@@ -27,7 +27,6 @@ jobs:
     - name: send result to slack
       uses: 8398a7/action-slack@v3
       with:
-        job_name: Test API
         status: ${{ job.status }}
         author_name: WS-API Test(PR) # default: 8398a7@action-slack
         fields: repo,commit,author,action,eventName,job,took,pullRequest
